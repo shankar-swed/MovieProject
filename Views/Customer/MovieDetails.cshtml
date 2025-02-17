@@ -1,0 +1,37 @@
+﻿@model CodWizardsMovieShop.Models.Db.Movie
+
+
+@{
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+<br />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-5 col-md-6 col-sm-12">
+            <img src="@Model.MovieUrl" alt="@Model.Title" class="img-fluid rounded shadow-sm"
+                 style="max-height: 500px; object-fit:cover,fill;">
+        </div>
+
+        <div class="col-lg-7 col-md-6 col-sm-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">@Model.Title</h2>
+                    <p class="card-text text-muted"><strong>Director:</strong> @Model.Director</p>
+                    <p class="card-text text-muted"><strong>Released:</strong> @Model.ReleaseYear</p>
+                    <p class="card-text text-muted"><strong>Price:</strong> $@Model.Price</p>
+                    <hr>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="@Url.Action("Index", "Customer")" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Back to Movies
+                        </a>
+                        <a onclick="addtoCartO(@Model.Id)" class="btn btn-primary">
+                            <i class="bi bi-cart-plus"></i> Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

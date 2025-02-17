@@ -1,0 +1,27 @@
+﻿@model CodWizardsMovieShop.Models.Db.Customer
+
+<div class="mainclass container justify-content-center align-content-center">
+
+	<form asp-action="LoginCustomer" asp-controller="Customer" id="loginForm" method="post">
+
+ 	<div class="row mt-4 bg-light-subtle ">
+
+			<div class="col-sm-8 pt-2">
+				<input asp-for="Email" placeholder="Enter your Email address" id="email" style="width:95%"required />
+@* 				<span id="email-error" class="text-danger" style="display: none;"></span>
+ *@				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="col-sm-4 mt-1">
+				<button type="submit" class="btn btn-primary btn-block" id="loginbtn" disabled> Login </button>
+			</div>
+		</div>
+
+
+
+
+	</form>
+
+</div>
+<script src="~/js/validations.js"></script>
+
+

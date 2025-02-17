@@ -1,0 +1,32 @@
+﻿@model CodWizardsMovieShop.Models.ViewModels.CustomerOrdersViewModel
+
+@{
+    ViewData["Title"] = "Customer Orders";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+   
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Orders for @Model.CustomerName</h1>
+    <p class="text-center">Total Orders: <strong>@Model.TotalOrders</strong></p>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-warning text-center">
+            @ViewBag.Message
+        </div>
+    }
+
+    <div class="row">
+        @foreach (var order in Model.Orders)
+        {
+            <div class="col-md-6 mb-4">
+                @Html.Partial("_CustomerOrderPartial", order)
+            </div>
+        }
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-controller="Customer" asp-action="Index" class="btn-lg btn btn-primary">Home</a>
+    </div>
+</div>

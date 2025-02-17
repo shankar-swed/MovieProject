@@ -1,0 +1,60 @@
+﻿@model CodWizardsMovieShop.Models.Db.Movie
+
+@{
+    ViewData["Title"] = "EditMovie";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container justify-content-center align-content-center mt-5">
+
+    <h1>Edit Movie</h1>
+
+    <hr />
+    <div style="width:80%" class="ms-5" >
+        <form asp-action="EditMovie">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Director" class="control-label"></label>
+                <input asp-for="Director" class="form-control" />
+                <span asp-validation-for="Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieUrl" class="control-label"></label>
+                <input asp-for="MovieUrl" class="form-control" />
+                <span asp-validation-for="MovieUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseYear" class="control-label"></label>
+                <input asp-for="ReleaseYear" class="form-control" />
+                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary mt-2" style="width:100%"  />
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <br />
+    
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,28 @@
+﻿@model CodWizardsMovieShop.Models.Db.Customer
+
+@{
+    ViewData["Title"] = "Customer Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row mt-5">
+<div class="col-md-4">
+
+   
+</div>
+<div class="col-md-4 p-0">
+
+    @Html.Partial("~/Views/Shared/_CustomerDetailPartial.cshtml")
+    <div class="row mt-2">
+            <div class="col-md-1"></div>
+            <a asp-controller="admin" asp-action="Index"  class=" col-md-5 btn bg-danger text-white">Back</a> 
+            <a asp-controller="admin" asp-action="EditCustomer" asp-route-id="@Model.Id" class=" col-md-5 btn bg-primary text-white ">Edit</a>
+            <div class="col-md-1"></div>
+          
+    </div>
+    
+</div>
+<div class="col-md-4">
+
+    
+</div>
+</div>

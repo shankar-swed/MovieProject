@@ -1,0 +1,37 @@
+﻿@model CodWizardsMovieShop.Models.ViewModels.IndividualCartOrder
+
+@{
+	double tot = Model.Movie.Price * Model.NumberofCopies;
+
+	<div class="row indorderdiv">
+		<div class="col-3 imgContainer">
+			<img src="@Model.Movie.MovieUrl" alt="@Model.Movie.Title" class="responsiveImg" />
+		</div>
+		<div class="col-9">
+			<div class="row">
+				<div class="col-sm-5 h6">
+					@Model.Movie.Title
+				</div>
+
+				<div id="movprice_@Model.Movie.Id" class="col-sm-3">
+					@Model.Movie.Price SEK X @Model.NumberofCopies
+				</div>
+
+
+				<div class="col-sm-3">
+					Sub total:@tot SEK
+				</div>
+				
+			</div>
+
+		</div>
+
+
+		<hr />
+
+	</div>
+
+
+
+}
+

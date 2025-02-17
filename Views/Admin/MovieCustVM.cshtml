@@ -1,0 +1,19 @@
+﻿@model CodWizardsMovieShop.Models.ViewModels.MovieCustVm
+
+@{
+    ViewData["Title"] = "MovieCustVM";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="bg-primary mt-5">
+    
+    <div class="row">
+        @foreach (var item in Model.Movies)
+        {
+            <div class="col-md-6">
+                <partial name="_MoviePartial" model="@item"></partial>
+            </div>
+        }
+    </div>
+</div>
+

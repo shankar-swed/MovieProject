@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Edit Customer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="mt-5">
+    <h1 class="text-center mb-4 customer-reg">Customer Information</h1>
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+            <form asp-action="EditCustomer" asp-controller="Admin" method="post">
+
+              @Html.Partial("~/Views/Shared/_EditCustomerPartial.cshtml")
+
+            </form>
+        </div>
+    </div>
+</div>

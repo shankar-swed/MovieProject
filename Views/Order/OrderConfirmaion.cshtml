@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+@model CodWizardsMovieShop.Models.ViewModels.CartViewModel
+
+@{
+	ViewData["Title"] = "Order Confirmaion";
+	Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+
+}
+<div class="mainclass">
+	<div class="h4 mt-2 bg-info-subtle" style="height:30px;width:100%;" >Order Confirmaion</div>
+
+	@{
+		int? cusid = HttpContextAccessor.HttpContext.Session.GetInt32("SessionCusId");
+
+		if (HttpContextAccessor.HttpContext.Session.GetString("SessionCartList") == null)
+		{ }
+		else
+		{
+			double total = 0;
+			foreach (var item in Model.ListMovie)
+			{
+				total += item.Movie.Price * item.NumberofCopies;
+				<div class="row mt-2 ">
+					<partial name="_OrderConfirmarionPartial" model="item" />
+
+				</div>
+
+			}
+
+			<div class="bg-body-secondary text-end p-4 bg-secondary" id="totaldiv">
+				<h5> Total Cost: <span id="totalcost"> @total</span></h5>
+			</div>
+
+			<br />
+
+
+		}
+
+
+
+	}
+
+</div>
